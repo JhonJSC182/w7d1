@@ -14,7 +14,7 @@ class CatsController < ApplicationController
         if @cat.save
             redirect_to cat_url(@cat)
         else
-            render json: @cat.errors.full_messages, status: unprocessable_entity
+            render json: @cat.errors.full_messages, status: :unprocessable_entity
         end
     end
 
@@ -23,7 +23,7 @@ class CatsController < ApplicationController
         if @cat.update(cat_params)
             redirect_to cat_url(@cat)
         else
-            render json: @cat.errors.full_messages, status: unprocessable_entity
+            render json: @cat.errors.full_messages, status: :unprocessable_entity
         end
     end
 
